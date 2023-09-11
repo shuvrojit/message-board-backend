@@ -20,7 +20,6 @@ export const getAllMessages = async (req: Request, res: Response) => {
     if (!messages) {
       res.status(404).json({ message: "no messages found" }).end;
     }
-
     res.status(200).json({ messages: messages }).end;
   } catch (e) {
     console.log(e);
