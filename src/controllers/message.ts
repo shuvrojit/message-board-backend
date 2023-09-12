@@ -16,7 +16,7 @@ export const createNewMessage = async (req: Request, res: Response) => {
 
 export const getAllMessages = async (req: Request, res: Response) => {
   try {
-    const messages = await Message.find();
+    const messages = await Message.find().sort({ createdAt: -1 });
     if (!messages) {
       res.status(404).json({ message: "no messages found" }).end;
     }
