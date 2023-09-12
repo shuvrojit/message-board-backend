@@ -9,7 +9,12 @@ const app: Express = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(cors);
+// const corsOptions = {
+// origin: "http://localhost:5173", // Replace with your React app's URL
+// };
+
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(morgan("combined"));
 
 app.use("/messages", messageRoutes);
